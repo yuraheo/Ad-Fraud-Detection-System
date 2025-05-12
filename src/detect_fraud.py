@@ -8,14 +8,14 @@ def apply_simple_rules(df, blacklisted_ips, min_time_on_site, ctr_threshold, fra
     df.loc[df['ip'].isin([ip.strip() for ip in blacklisted_ips]), 'fraud_score'] += 1
 
 
-    # Rule 2: extreamly short time on site (under 2 seconds) +1
+    # Rule 2: extreamly short time on site +1
     df.loc[df['time_on_site'] < min_time_on_site, 'fraud_score'] += 1
 
     # Rule 3: No click through AND short session +1 
     df['click_binary'] = df['click_through'].astype(int)
     df.loc[df['click_binary'] * 100 < ctr_threshold, 'fraud_score'] += 1
     
-    # Flag as fraud if score >= 2
+    # Flag as fraud if score >= fraud score
     df['flagged_as_fraud'] = df['fraud_score'] >= fraud_score_cutoff
 
     return df

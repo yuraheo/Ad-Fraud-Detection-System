@@ -24,7 +24,7 @@ def generate_summary_report(df, output_file="reports/summary_report.md"):
 
         f.write(f"\n## Detection Rules Used:\n")
         f.write("- Known bad IPs\n")
-        f.write("- Short time on site (< {df['time_on_site'].min()}s)\n")
+        f.write(f"- Short time on site (< {df['time_on_site'].min()}s)\n")
         f.write("- Low CTR proxy (click_through field)\n")
         f.write("- Score threshold as set in the dashboard\n")
 

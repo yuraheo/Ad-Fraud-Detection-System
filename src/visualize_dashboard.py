@@ -94,7 +94,7 @@ df['fraud_score'].plot.hist(bins = range(0, df['fraud_score'].max()+2), rwidth =
 ax2.set_xlabel("Fraud Score")
 ax2.set_ylabel("Number of Clicks")
 st.pyplot(fig2)
-st.subheader("🧠 What Do Fraud Scores Mean?")
+st.subheader("What Do Fraud Scores Mean?")
 st.markdown(f"""
 Each click is given a **fraud score** based on suspicious behavior:
 
