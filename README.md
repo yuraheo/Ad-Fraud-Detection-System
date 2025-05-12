@@ -18,9 +18,11 @@ An interactive, rule-based fraud detection tool for identifying suspicious behav
 
 ```bash
 pip install -r requirements.txt
+```
 
 2. Run the full Pipeline
 
 ```bash
 python app.py
+```
 
